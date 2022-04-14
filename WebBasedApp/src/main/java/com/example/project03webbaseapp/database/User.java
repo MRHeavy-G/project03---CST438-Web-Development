@@ -4,11 +4,14 @@ package com.example.project03webbaseapp.database;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 
 import java.util.Objects;
+import javax.persistence.*;
 
 @Entity
 public class User {
 
+    @Id
     private Integer userId;
+
     private String username;
     private String firstname;
     private String lastname;
@@ -23,6 +26,10 @@ public class User {
         this.lastname = lastname;
         this.password = password;
         this.profilePicture = profilePicture;
+
+    }
+
+    public User() {
 
     }
 
