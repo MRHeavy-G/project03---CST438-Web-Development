@@ -55,6 +55,18 @@ button:hover{
     background-color: rgba(255,255,255,0.8);
 }
 
+.submit_btn {
+
+    padding: 10px 25px;
+    background-color: gold;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all .05s ease 0s;
+
+}
+
+
 .logo {
     cursor: pointer;
     margin-right: auto;
@@ -130,7 +142,7 @@ button:hover{
 }
 
 .background{
-    background-image: url("image/joshua-hoehne-YPgTovTiUv4-unsplash.jpg");
+    background-image: url("images/joshua-hoehne-YPgTovTiUv4-unsplash.jpg");
     background-size: cover;
     background-position: center;
     width: 100%;
