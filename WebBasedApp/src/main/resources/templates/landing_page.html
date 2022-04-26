@@ -29,19 +29,22 @@
 
 -->
 
-<div >
+<div>
     <div class="box">
         <ul id="nav_list">
+            <!--
             <i class="fas fa-home"></i>
             <li><a href="#" class="home">LoGo</a></li>
-            <!--<img id="captionIT_logo" class="cropped_img" src="image/CaptionIT-logos_transparent.png" alt="Logo for the caption submission website">-->
-
+            -->
+            <img id="captionIT_logo"  src="images/CaptionIT-logos_transparent.png" th:src="@{images/CaptionIT-logos_transparent.png}" alt="Logo for the caption submission website">
         </ul>
+
 
         <input type="checkbox" id="check">
         <label for="check">
             <i id="btn">Login</i>
             <i class="fas fa-times" id="cancel"></i>
+
         </label>
         <div id="login_form">
             <h1>Login</h1>
@@ -49,10 +52,19 @@
                 <li><input class="txt"  type="text" placeholder="User name"></li>
                 <li><input class="txt"  type="password" placeholder="Password"></li>
                 <li><input class="button"  type="button" value="Login"></li>
+                <li><a>Create Account</a></li>
             </ul>
+
         </div>
+
     </div>
 </div>
+
+<body>
+    <div class="center_align">
+        <span>Random Test box</span>
+    </div>
+</body>
 
 <div class="container_parent">
     <div class="container_reduced_for_weekly">
@@ -75,7 +87,7 @@
         <div class="divider"></div>
         <div class="center_spacing">
             <div class="canvas_container">
-                <img class="img_fit" src="image/vincentiu-solomon-ln5drpv_ImI-unsplash.jpg">
+                <img src="/images/CaptionIT-logos.jpeg" class="img_fit" th:src="@{images/CaptionIT-logos.jpeg}">
             </div>
         </div>
         <div class="divider"></div>
