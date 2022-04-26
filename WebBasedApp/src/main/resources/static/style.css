@@ -138,12 +138,12 @@ button:hover{
     justify-content: center;
     width: 720px;
     height: 640px;
-    border: solid 5px white;
+
 }
 
 .img_fit {
     max-width: 100%;
-    object-fit: fill;
+    object-fit: cover;
 }
 
 .logo_alignment{
@@ -191,7 +191,7 @@ button:hover{
 .caption_section_label{
     font-size: 24px;
     left: 40%;
-    top: 60px;
+    top: 30px;
     position: absolute;
     background-color: white;
     color: black;
@@ -217,11 +217,17 @@ button:hover{
     transition: all .05s ease 0s;
 }
 
+.login_submit_btn a{
+    text-decoration: none;
+    background-color: gold;
+    color: white;
+}
+
 .input_design {
     background-color: white;
     border:none;
     width: 820px;
-    height: 240px;
+    height: 180px;
     text-align: center;
 }
 
