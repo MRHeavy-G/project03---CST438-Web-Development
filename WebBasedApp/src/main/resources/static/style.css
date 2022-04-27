@@ -4,13 +4,17 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    background-color: #112E51
+    background-color: #112E51;
 
 }
 
 body {
     color:floralwhite !important;
+    background-image: url("images/joshua-hoehne-YPgTovTiUv4-unsplash.jpg");
+    background-size: cover;
+    background-position: center;
     margin: 0;
+    padding: 0;
 }
 
 
@@ -24,6 +28,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 30px 10%;
+    height: 150px;
     border: solid 5px white ;
 }
 
@@ -46,7 +51,7 @@ button {
 
 footer {
     width: 100%;
-    height: 200px;
+    height: 5vh;
     background-color: whitesmoke;
     border: solid 1px black;
 }
@@ -60,8 +65,18 @@ button:hover{
     margin-right: auto;
 }
 
+.cropped_img {
+    width: 200px;
+    height: 130px;
+    margin: -10px 0px 0px -150px;
+    overflow: hidden;
+
+}
+
 .nav_connections {
     list-style: none;
+    font-size: 24px;
+
 }
 
 .nav_connections li{
@@ -97,17 +112,19 @@ button:hover{
     justify-content: center;
 }
 .container_reduced_for_weekly{
-    width: 500px;
+    width: 600px;
     height: 50px;
     margin: auto 5px 5px 5px;
     justify-content: center;
     text-align: center;
-    border: solid 5px white ;
+    border-left: solid 1px white;
+    border-bottom: solid 1px white;
+    border-right: solid 1px white;
 }
 
 .main_body_for_contest{
-    width: 1000px;
-    height: 50px;
+    width: auto;
+    height: 5px;
     margin: auto 5px 5px 5px;
     justify-content: center;
     text-align: center;
@@ -121,7 +138,12 @@ button:hover{
     justify-content: center;
     width: 720px;
     height: 640px;
-    background-color: white;
+
+}
+
+.img_fit {
+    max-width: 100%;
+    object-fit: cover;
 }
 
 .logo_alignment{
@@ -129,10 +151,258 @@ button:hover{
     margin: 20px auto;
 }
 
+.center_align {
+    margin: auto;
+    width: 70%;
+    height: 160vh;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    border: solid 1px black;
+}
+
+.divider {
+    width: 100%;
+    hieght: 50px;
+    padding: 50px;
+
+}
+
+.intro_info {
+    width: 100%;
+    height: 100%;
+    marign: auto;
+    padding: 10px;
+    border: solid 1px black;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+}
+
+.container_center_body {
+    width: 100%;
+    height: 20vh;
+    outline: dashed 1px black;
+    position: relative;
+    background-color: white;
+}
+
+.caption_section_label{
+    font-size: 24px;
+    left: 40%;
+    top: 30px;
+    position: absolute;
+    background-color: white;
+    color: black;
+
+}
+
+.caption_character_length {
+    bottom: 10px;
+    color: #999999;
+    font-size: 24px;
+    line-height: 1.6;
+    position: absolute;
+    right: 15px;
+    background-color: white;
+}
+
+.submit_btn {
+    padding: 10px 25px;
+    background-color: gold;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all .05s ease 0s;
+}
+
+.login_submit_btn a{
+    text-decoration: none;
+    background-color: gold;
+    color: white;
+}
+
+.input_design {
+    background-color: white;
+    border:none;
+    width: 820px;
+    height: 180px;
+    text-align: center;
+}
+
+.center_spacing {
+    margin: auto;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+/* Login Drop Down */
+
+/* -------------------------------------------------------->> */
+
+.div_box {
+    width: 100%;
+    height: 5vh;
+    border: solid 2px white;
+}
+
+
+.box #nav_list{
+    margin:0;
+    padding:0;
+    background: #112E51;
+    overflow: hidden;
+}
+
+.box #nav_list li{
+    display: inline-block;
+    list-style: none;
+    padding: 15px;
+    transition: all ease-in-out .2s;
+
+}
+
+#nav_list a{
+    color:white;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+    padding-right: 30px;
+}
+
+.box #nav_list i{
+    font-size: 35px;
+    padding: 0;
+    color: white;
+    position: absolute;
+    margin: 8px;
+}
+
+.box #nav_list img{
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+}
+
+.box img{
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+}
+
+
+.home{
+    padding-left: 40px;
+}
+
+.box #nav_list li:hover{
+    background: gold;
+}
+
+#login_form {
+    width: 350px;
+    padding: 10px;
+    margin-left: 120vh;
+    background-color: gold;
+    text-align: center;
+    position: relative;
+    transition: all ease-in-out .2s;
+    top: -450px;
+}
+
+#login_form h1{
+    margin-top: 0;
+    color: white;
+    background-color: gold;
+}
+
+#login_list{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: block;
+
+
+}
+
+#login_list li {
+    background-color: gold;
+}
+
+#login_list .txt{
+    height: 25px;
+    width: 250px;
+    margin-bottom: 20px;
+    padding: 3px 2px;
+    font-size: 24px;
+    border-radius: 5px;
+    border: none;
+    background-color: white;
+}
+
+#login_list .button{
+    width: 150px;
+    height: 30px;
+    font-size: 24px;
+    border-radius: 30px;
+    border: none;
+    background-color: white;
+    cursor: pointer;
+}
+
+
+#check{
+    display: none;
+}
+
+label #btn, label #cancel{
+    position: absolute;
+    cursor: pointer;
+    background-color: #112E51;
+}
+
+label #btn{
+    right: 2pc;
+    top: 20px;
+    font-size: 24px;
+    color: white;
+    padding: 6px  10px;
+    transition: all .2s ease;
+}
+
+label #cancel{
+    z-index: 100;
+    right: 1pc;
+    top: -50px;
+    font-size: 24px;
+    color: white;
+    padding: 3px 9px;
+    transition: all .2s ease;
+}
+
+#check:checked ~ #login_form{
+    top: 0;
+}
+#check:checked ~ label #btn{
+    right: 0;
+    opacity: 0;
+    pointer-events: none;
+}
+#check:checked ~ label #cancel{
+    top: 0;
+}
+
+/*  --------------------  */
+
+
 .background{
-    background-image: url("image/joshua-hoehne-YPgTovTiUv4-unsplash.jpg");
+    background-image: url("images/joshua-hoehne-YPgTovTiUv4-unsplash.jpg");
     background-size: cover;
     background-position: center;
     width: 100%;
-    height: 200vh;
+    height: 190vh;
 }
+
