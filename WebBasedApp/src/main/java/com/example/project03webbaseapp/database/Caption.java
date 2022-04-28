@@ -16,6 +16,8 @@ public class Caption {
 
     private Integer userId; // to store the ID of the account who made the caption
 
+    private Integer pictureId;
+
     private String content; // to store what the caption is
 
     private Date captionDate; // store date caption was made
@@ -24,11 +26,12 @@ public class Caption {
     private Integer captionLikes;
 
 
-    public Caption(Integer userId, String content, Date captionDate, Time captionTime){
+    public Caption(Integer userId, String content, Date captionDate, Time captionTime, Integer pictureId){
         this.userId = userId;
         this.content = content;
         this.captionDate = captionDate;
         this.captionTime = captionTime;
+        this.pictureId = pictureId;
 
     }
 
@@ -80,6 +83,15 @@ public class Caption {
     public void setCaptionLikes(Integer captionLikes) {
         this.captionLikes = captionLikes;
     }
+
+    public Integer getPictureId() {
+        return pictureId;
+    }
+
+    public void setPictureId(Integer pictureId) {
+        this.pictureId = pictureId;
+    }
+
     public Caption(){
 
     }
