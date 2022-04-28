@@ -11,12 +11,12 @@ import java.util.*;
 @RequestMapping("/api")
 public class Api {
 
-    @Autowired
-    private UserRepo userRepo;
-    @Autowired
-    private CaptionRepo captionRepo;
-    @Autowired
-    private PictureRepo pictureRepo;
+//    @Autowired
+//    private UserRepo userRepo;
+//    @Autowired
+//    private CaptionRepo captionRepo;
+//    @Autowired
+//    private PictureRepo pictureRepo;
 
     // User API endpoints
 
