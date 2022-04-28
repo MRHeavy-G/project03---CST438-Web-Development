@@ -38,8 +38,6 @@ public class Api {
         return userRepo.findUserByUserId(userId);
     }
 
-
-
 //    Caption API endpoints
 
     @RequestMapping("/getCaptionById")
