@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,900;1,400&family=Roboto+Mono:ital,wght@1,600&display=swap');
 
+/*
 * {
     box-sizing: border-box;
     margin: 0;
@@ -8,9 +9,13 @@
 
 }
 
+ */
+
 body {
+    width: 100%;
+    height: 200vh;
     color:floralwhite !important;
-    background-image: url("images/joshua-hoehne-YPgTovTiUv4-unsplash.jpg");
+    background-image: url("images/waldemar-brandt-WAchuh1Gc-0-unsplash.jpg");
     background-size: cover;
     background-position: center;
     margin: 0;
@@ -29,8 +34,8 @@ header {
     align-items: center;
     padding: 30px 10%;
     height: 150px;
-    border: solid 5px white ;
 }
+
 
 li, a, button{
     font-family: "Playfair", sans-serif;
@@ -51,25 +56,13 @@ button {
 
 footer {
     width: 100%;
-    background-color: whitesmoke;
+    background-color: blue;
     border: solid 1px black;
 }
 
 button:hover{
     background-color: rgba(255,255,255,0.8);
 }
-
-.submit_btn {
-
-    padding: 10px 25px;
-    background-color: gold;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: all .05s ease 0s;
-
-}
-
 
 .logo {
     cursor: pointer;
@@ -105,23 +98,16 @@ button:hover{
     color: gold;
 }
 
-.container_full_screen {
-    width: 100%;
-    height: 50px;
-    margin: 5px auto;
-}
 
-.container_50_50{
-    width: 100px;
-    height: 50px;
-    align-items: center;
-
-}
 .container_parent{
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 70%;
+    width: 70%;
+    margin: auto;
 }
+
 .container_reduced_for_weekly{
     width: 600px;
     height: 50px;
@@ -133,15 +119,6 @@ button:hover{
     border-right: solid 1px white;
 }
 
-.main_body_for_contest{
-    width: auto;
-    height: 5px;
-    margin: auto 5px 5px 5px;
-    justify-content: center;
-    text-align: center;
-    background-color: white;
-
-}
 
 .canvas_container{
     display: flex;
@@ -165,7 +142,7 @@ button:hover{
 .center_align {
     margin: auto;
     width: 70%;
-    height: 120vh;
+    height: 150vh;
     align-items: center;
     justify-content: center;
     display: flex;
@@ -184,7 +161,6 @@ button:hover{
     height: 100%;
     marign: auto;
     padding: 10px;
-    border: solid 1px black;
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -226,8 +202,10 @@ button:hover{
     border-radius: 50px;
     cursor: pointer;
     transition: all .05s ease 0s;
+    width: 100%;
+    height: 7vh;
 }
-
+/*
 .input_design {
     background-color: white;
     border:none;
@@ -235,7 +213,20 @@ button:hover{
     height: 240px;
     text-align: center;
 }
+*/
 
+.input_design {
+    background-color: #f5f5f5;
+    border: 1px solid #e5e5e5;
+    border-radius: 2px;
+    display: block;
+    height: 260px;
+    line-height: 1.19;
+    padding: 46px 20px 0;
+    resize: none;
+    text-align: center;
+    width: 750px;
+}
 .center_spacing {
     margin: auto;
     padding: 10px;
@@ -394,6 +385,42 @@ label #cancel{
     width: 100%;
     height: 190vh;
 }
+
+/* Full Screen dividers for spacing */
+
+.blue_divider{
+    width: 75%;
+    height: 50vh;
+    background-color: dodgerblue;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin: auto;
+}
+
+.white_divider{
+    width: 100%;
+    height: 50vh;
+    background-color: white;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin: auto;
+}
+
+.transperent_divider{
+    width: 70%;
+    height: 70vh;
+    justify-content: center;
+    display: flex;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+}
+
+/* ----------------------------------------- */
 
 
 #login-dp{
