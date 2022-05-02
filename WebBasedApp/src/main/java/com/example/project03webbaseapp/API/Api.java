@@ -14,6 +14,11 @@ import java.util.*;
 @RequestMapping("/api")
 public class Api {
 
+    public apiKey apiKey = new apiKey();
+    public final String ACCESS_KEY = apiKey.getAccessKey();
+    public final String SECRET_KEY = apiKey.getSecretKey();
+
+
     @Autowired
     private UserRepo userRepo;
     @Autowired
@@ -55,5 +60,10 @@ public class Api {
     //TODO: write query for get all captions
 
 //    Picture API endpoints
+
+    @PostMapping("/setPicture")
+    public void setPicture(){
+        String endpoint = "https://api.unsplash.com/search/photos?query=funny&client_id=" + ACCESS_KEY;
+    }
 
 }
