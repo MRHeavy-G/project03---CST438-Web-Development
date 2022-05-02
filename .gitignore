@@ -2,6 +2,12 @@
 # Created by https://www.toptal.com/developers/gitignore/api/windows,macos,web,java,react,angular,django
 # Edit at https://www.toptal.com/developers/gitignore?templates=windows,macos,web,java,react,angular,django
 
+#API Ignore
+API/
+apiKey.java
+.env
+
+
 ### Angular ###
 ## Angular ##
 # compiled output
