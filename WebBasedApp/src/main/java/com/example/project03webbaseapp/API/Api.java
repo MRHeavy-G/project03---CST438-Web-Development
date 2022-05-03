@@ -6,12 +6,21 @@ import org.springframework.stereotype.*;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.ui.*;
 
+// java url packages
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import org.json.JSONObject;
+
 
 import javax.servlet.http.HttpSession;
 import java.util.*;
 
 @Controller
-@RequestMapping("/api")
+@RequestMapping("/apiEndpoints")
 public class Api {
 
     public apiKey apiKey = new apiKey();
@@ -61,9 +70,10 @@ public class Api {
 
 //    Picture API endpoints
 
-    @PostMapping("/setPicture")
+    @RequestMapping("/setPicture")
     public void setPicture(){
         String endpoint = "https://api.unsplash.com/search/photos?query=funny&client_id=" + ACCESS_KEY;
-    }
+
+        }
 
 }
