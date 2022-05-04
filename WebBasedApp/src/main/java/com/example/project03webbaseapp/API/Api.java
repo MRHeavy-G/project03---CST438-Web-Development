@@ -57,6 +57,26 @@ public class Api {
         return userRepo.findUserByUserId(userId);
     }
 
+    @RequestMapping("/usernameIsTaken")
+    public @ResponseBody Boolean usernameIsTaken(@RequestParam(defaultValue = "user") String username){
+        return userRepo.existsUserByUsername(username);
+    }
+
+    @PostMapping("/signup")
+    public String addUser(@RequestParam String username,
+                          @RequestParam String fName,
+                          @RequestParam String lName,
+                          @RequestParam String password,
+                          @RequestParam String profilePicUrl){
+        User user = new User(username, fName, lName, password, profilePicUrl);
+
+        if(!usernameIsTaken(username)){
+            userRepo.save(user);
+            return "redirect:/landing_page";
+        }
+        return "redirect:/signup";
+    }
+
 //    Caption API endpoints
 
     @RequestMapping("/getCaptionById")
