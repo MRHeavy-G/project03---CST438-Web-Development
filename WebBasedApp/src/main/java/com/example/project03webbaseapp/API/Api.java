@@ -124,6 +124,7 @@ public class Api {
             pictureList.add(picture);
         }
 
+
         return pictureList.get(0);
     }
 
