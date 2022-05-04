@@ -8,7 +8,8 @@ import java.util.List;
 
 public interface UserRepo extends CrudRepository<User, Integer>{
 
-    User finderUserByUsername(String username);
+
+    User findUserByUsername(String username);
 
     User findUserByUserId(Integer userId);
 
