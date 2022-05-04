@@ -8,5 +8,5 @@ public interface CaptionRepo extends CrudRepository<Caption, Integer>{
 
     Caption findCaptionByUserId(Integer userId);
 
-    //TODO:write query here
+
 }

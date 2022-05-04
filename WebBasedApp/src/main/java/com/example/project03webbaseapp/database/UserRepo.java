@@ -8,12 +8,12 @@ import java.util.List;
 
 public interface UserRepo extends CrudRepository<User, Integer>{
 
-    //TODO doesnt like these IDK WHY:(
-//    User finderUserByUsername(String username);
-//
-//    User findUserByUserId(Integer userId);
-//
-//    Boolean existsUserByUsername(String username);
+
+    User findUserByUsername(String username);
+
+    User findUserByUserId(Integer userId);
+
+    Boolean existsUserByUsername(String username);
 
 
 }
