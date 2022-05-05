@@ -17,7 +17,7 @@ public class Caption {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer captionId;
 
-    private Integer userId; // to store the ID of the account who made the caption
+    private String username; // to store the ID of the account who made the caption
 
     private Integer pictureId;
 
@@ -28,8 +28,8 @@ public class Caption {
     private Integer captionLikes;
 
 
-    public Caption(Integer userId, String content, String dateTime, Integer pictureId){
-        this.userId = userId;
+    public Caption(String username, String content, String dateTime, Integer pictureId){
+        this.username = username;
         this.content = content;
         this.dateTime = dateTime;
         this.pictureId = pictureId;
@@ -45,12 +45,12 @@ public class Caption {
         this.captionId = captionId;
     }
 
-    public Integer getUserId() {
-        return userId;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUserId(Integer userId) {
-        this.userId = userId;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getContent() {
