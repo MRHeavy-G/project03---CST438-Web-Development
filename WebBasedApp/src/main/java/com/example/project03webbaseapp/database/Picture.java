@@ -1,10 +1,13 @@
 package com.example.project03webbaseapp.database;
 
 
+import org.springframework.scheduling.annotation.EnableScheduling;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@EnableScheduling
 @Entity
 public class Picture {
 

@@ -2,11 +2,14 @@ package com.example.project03webbaseapp.database;
 
 
 
+import org.springframework.scheduling.annotation.EnableScheduling;
+
 import javax.persistence.*;
 import java.sql.Time;
 import java.util.Date;
 import java.util.Objects;
 
+@EnableScheduling
 @Entity
 public class Caption {
 
