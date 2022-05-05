@@ -49,7 +49,7 @@ public class Api {
 
     @RequestMapping("/getUserByUsername")
     public @ResponseBody User getUserByUsername(@RequestParam(defaultValue = "user") String name){
-        return userRepo.findUserByUsername(name);
+        return UserRepo.findUserByUsername(name);
     }
 
     @RequestMapping("/getUserByUserId")
@@ -74,7 +74,7 @@ public class Api {
             userRepo.save(user);
             return "redirect:/landing_page";
         }
-        return "redirect:/signup";
+        return "redirect:/landing_page";
     }
 
 //    Caption API endpoints

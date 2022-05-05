@@ -9,7 +9,9 @@ import java.util.List;
 public interface UserRepo extends CrudRepository<User, Integer>{
 
 
-    User findUserByUsername(String username);
+    public static User findUserByUsername(String username) {
+        return null;
+    }
 
     User findUserByUserId(Integer userId);
 

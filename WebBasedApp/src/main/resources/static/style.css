@@ -15,7 +15,7 @@ body {
     width: 100%;
     height: 200vh;
     color:floralwhite !important;
-    background-image: url("image/waldemar-brandt-WAchuh1Gc-0-unsplash.jpg");
+    background-image: url("images/waldemar-brandt-WAchuh1Gc-0-unsplash.jpg");
     background-size: cover;
     background-position: center;
     margin: 0;
@@ -205,15 +205,7 @@ button:hover{
     width: 100%;
     height: 7vh;
 }
-/*
-.input_design {
-    background-color: white;
-    border:none;
-    width: 820px;
-    height: 240px;
-    text-align: center;
-}
-*/
+
 
 .input_design {
     background-color: #f5f5f5;
@@ -379,7 +371,7 @@ label #cancel{
 
 
 .background{
-    background-image: url("image/joshua-hoehne-YPgTovTiUv4-unsplash.jpg");
+    background-image: url("images/joshua-hoehne-YPgTovTiUv4-unsplash.jpg");
     background-size: cover;
     background-position: center;
     width: 100%;
