@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="https://www.thymeleaf.org/" xmlns="http://www.w3.org/1999/html">
 
 <head>
     <meta charset="utf-8" />
@@ -58,7 +58,7 @@
 
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#staticBackdrop-createAccount">Create Account</button>
-                <button type="button" class="btn btn-primary">Login</button>
+               <button type="button" class="btn btn-primary" >Login</button> <!-- add login function-->
             </div>
         </div>
     </div>
@@ -233,7 +233,8 @@
         <div class="divider"></div>
         <div class="center_spacing">
             <div class="canvas_container">
-                <!-- <img class="img_fit" src="images/vin" th:src="images/vincentiu-solomon-ln5drpv_ImI-unsplash.jpg"> -->
+                <img th:src="@{${pictureURL}}" th:height="500" th:width="500">
+
             </div>
         </div>
         <div class="divider"></div>
@@ -253,6 +254,7 @@
         <div class="divider"></div>
         <div class="center_spacing">
             <button class="btn btn-outline-primary btn-lg" data-bs-toggle="modal" data-bs-target="#staticBackdrop-login">Login</button>
+<!--            <button th:href="/setPicture" th:method="GET"></button>-->
         </div>
     </div>
 </div>
