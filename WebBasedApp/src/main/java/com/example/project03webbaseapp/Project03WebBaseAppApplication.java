@@ -19,9 +19,9 @@ public class Project03WebBaseAppApplication {
     public final String ACCESS_KEY = apiKey.getAccessKey();
     public final String SECRET_KEY = apiKey.getSecretKey();
 
-    @RequestMapping("/")
-    //@ResponseBody
-    String home(Model model){return "landing_page";}
+//    @RequestMapping("/")
+//    //@ResponseBody
+//    String home(Model model){return "landing_page";}
 
 
 
