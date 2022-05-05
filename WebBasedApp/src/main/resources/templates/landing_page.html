@@ -202,6 +202,7 @@
 
         <div class="divider"></div>
 
+
         <form>
             <div class="center_spacing">
                 <div class="container_center_body">
@@ -214,6 +215,18 @@
                     <span class="caption_character_length">250</span>
 
                 </div>
+
+        <div class="center_spacing">
+            <div class="container_center_body">
+                <form action="/addCaptionToPicture" th:method="POST">
+                        <span class="caption_section_label">
+                            Your Caption
+                        </span>
+                    <input class="input_design" maxlength="250" id="caption2_content" type="text">
+                    <input type="submit" text="Submit" class="btn btn-primary btn-block">
+                </form>
+                <span class="caption_character_length">250</span>
+
 
             </div>
         </form>
