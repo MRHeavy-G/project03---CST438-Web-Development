@@ -47,7 +47,7 @@ public class LandingPageController {
         return "landing_page";}
 
     @PostMapping("/addCaptionToPicture")
-    public String addCaptionToPicture(@RequestParam Integer userId,
+    public String addCaptionToPicture(@RequestParam String username,
                                       @RequestParam String caption,
                                       @RequestParam Integer pictureId){
         //public Caption(Integer userId, String content, Date captionDate, Time captionTime, Integer pictureId){
@@ -56,12 +56,14 @@ public class LandingPageController {
         Date date = new Date();
 
         String captiondate = formatter.format(date).toString();
-        Caption cap = new Caption(userId, caption, captiondate, pictureId);
+        Caption cap = new Caption(username, caption, captiondate, pictureId);
 
         captionRepo.save(cap);
 
         return "redirect:/landing_page";
     }
+
+    //model.addAttribute("picUrl", pictureList.get(0).getPictureUrl());
 
 
     @RequestMapping(value="/landing_page", method = RequestMethod.GET)
@@ -78,62 +80,17 @@ public class LandingPageController {
     @RequestMapping(value= "/profile", method = RequestMethod.GET)
     public String getProfile(){return "profile";}
 
+    @RequestMapping(value="/viewCaptions", method = RequestMethod.GET)
+    public String viewCaptions(@RequestParam Integer pictureId, Model model){
 
-//    @RequestMapping(value = "/Landing", method = RequestMethod.GET)
-//    public String setPicture(Model model) throws Exception {
-//        List<Picture> pictureList = new ArrayList<Picture>();
-//
-//        String endpoint = networkDAO.request("https://api.unsplash.com/search/photos?query=funny&client_id=" + ACCESS_KEY);
-//
-//        JSONObject root = new JSONObject(endpoint);
-//
-//        JSONArray pictures = root.getJSONArray("results");
-//
-//        //System.out.println(pictures);
-//
-//        for(int i = 0; i < pictures.length(); i++){
-//            // Json Data
-//            JSONObject jsonPic = pictures.getJSONObject(i);
-//
-//            //new picture object
-//            Picture picture = new Picture();
-//
-//            String name = jsonPic.optString("description", null);
-//
-//            System.out.println(name);
-//
-//            // TODO not sure if this will work:(
-//            JSONObject jsonURL = jsonPic.getJSONObject("urls");
-//
-//            String url = jsonURL.getString("regular");
-//
-//            System.out.println(url);
-//            try {
-//                picture.setPictureName(name);
-//                picture.setPictureUrl(url);
-//
-//            }catch(JSONException je){
-//                picture.setPictureName("nothing");
-//                picture.setPictureUrl("no url");
-//            }
-//            pictureList.add(picture);
-//
-//            pictureRepo.save(picture);
-//        }
-//
-//
-//        System.out.println(pictureList.get(0).getPictureUrl());
-//
-//
-//       // model.addAttribute("msg", "Welcome to the Netherlands!");
-//
-//
-//        model.addAttribute("picUrl", pictureList.get(0).getPictureUrl());
-//
-//
-//
-//        return "redirect/";
-//    }
+        Picture pic = pictureRepo.findPictureByPictureId(pictureId);
+
+        model.addAttribute("picture", pic);
+
+        return "CaptionList";
+    }
+
+
 
 
 }
