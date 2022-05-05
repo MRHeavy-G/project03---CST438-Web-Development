@@ -6,60 +6,49 @@
     <link href="style.css" rel="stylesheet"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <title>CaptionIT</title>
-    <script src="https://kit.fontawesome.com/a9365d9272.js" crossorigin="anonymous"></script>
+    <title>CaptionIT_Profile</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
 </head>
 
-<!--
-<div>
-    <header role="banner">
-        <img id="captionIT_logo" class="cropped_img" src="image/CaptionIT-logos_transparent.png" alt="Logo for the caption submission website">
-        <nav>
-            <ul class="nav_connections">
-
-                    <li><a href="#" data-toggle="modal">Login</a></li>
-
-                <li><a href="#">Create Account</a></li>
-            </ul>
-        </nav>
-
-    </header>
-<img class="rounded float-start cropped_img" src="image/CaptionIT-logos.jpeg">
-</div>
-
--->
 
 
 <!-- Modal For Logging In-->
 <div class="modal fade" id="staticBackdrop-login" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header">
+            <form class="login-form" method="post" name="form-login-signin" action="/login" >
+                <div class="modal-header">
 
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-
-            <div class="modal-header">
-                <!-- Login Input Field -->
-                <div class="input-group input-group-sm mb-3">
-                    <span class="input-group-text" id="inputGroup-sizing-sm-username">Login</span>
-                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
-                </div>
-            </div>
-
-            <div class="modal-header">
-                <!-- Password Input Field -->
-                <div class="input-group input-group-sm mb-3">
-                    <span class="input-group-text" id="inputGroup-sizing-sm-password">Password</span>
-                    <input type="password" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
 
-            </div>
+                <div class="modal-header">
+                    <!-- Login Input Field -->
+                    <div class="input-group input-group-sm mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-sm-username" name="username">Username: </span>
+                        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" >
+                    </div>
+                </div>
 
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#staticBackdrop-createAccount">Create Account</button>
-               <button type="button" class="btn btn-primary" >Login</button> <!-- add login function-->
-            </div>
+                <div class="modal-header">
+                    <!-- Password Input Field -->
+                    <div class="input-group input-group-sm mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-sm-password" name="password" >Password: </span>
+                        <input type="password" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                    </div>
+
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#staticBackdrop-createAccount">Create Account</button>
+                    <a class="btn btn-primary">Sign In</a>
+                    <!--  th:href="@{/logged_in}" -->
+                </div>
+            </form>
+
         </div>
     </div>
 </div>
@@ -110,27 +99,28 @@
 
 <!-- -------------------------------------------------------------------------------------- -->
 
+
 <div>
-    <nav id="home" class=" navbar navbar-expand-lg bg-primary navbar-dark" style="height: 10vh; ">
+    <nav id="home" class=" navbar navbar-expand-lg bg-primary navbar-dark p-2 " style="height: 7vh; ">
         <div class="container">
-            <a href="#" class="navbar-brand">CaptionIT</a>
+            <a href="#" class="navbar-brand text-dark">CaptionIT</a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navlinkedlist">
                 <span class="navbar-toggle-icon"></span>
             </button>
 
             <div id="navlinkedlist" class="collapse navbar-collapse ">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a href="#login" class="nav-link" data-bs-toggle="modal" data-bs-target="#staticBackdrop-login">Login</a>
+                <ul class="navbar-nav ms-auto ">
+                    <li class="nav-item ">
+                        <a href="#login" class="btn nav-link btn-light navbar-btn text-dark m-1" data-bs-toggle="modal" data-bs-target="#staticBackdrop-login">Login</a>
                     </li>
 
                     <li class="nav-item">
-                        <a href="#createA" class="nav-link" data-bs-toggle="modal" data-bs-target="#staticBackdrop-createAccount">Create Account</a>
+                        <a href="#createA" class="btn btn-light nav-link text-dark m-1" data-bs-toggle="modal" data-bs-target="#staticBackdrop-createAccount">Create Account</a>
                     </li>
 
                     <li class="nav-item">
-                        <a href="#contest_page" class="nav-link">This Week's / Days Contest</a>
+                        <a href="#contest_page" class="btn btn-light nav-link text-dark m-1">Today's Contest</a>
                     </li>
                 </ul>
             </div>
@@ -138,62 +128,11 @@
     </nav>
 </div>
 
-
-
-<!--
-<div >
-    <div class="box">
-        <ul id="nav_list">
-            <i class="fas fa-home"></i>
-            <li><a href="#" class="home">LoGo</a></li>
-            <img id="captionIT_logo" class="cropped_img" src="image/CaptionIT-logos_transparent.png" alt="Logo for the caption submission website">
-
-        </ul>
-
-        <input type="checkbox" id="check">
-        <label for="check">
-            <i id="btn">Login</i>
-            <i class="fas fa-times" id="cancel"></i>
-        </label>
-        <div id="login_form">
-            <h1>Login</h1>
-            <ul id="login_list">
-                <li><input class="txt"  type="text" placeholder="User name"></li>
-                <li><input class="txt"  type="password" placeholder="Password"></li>
-                <li><input class="button"  type="button" value="Login"></li>
-            </ul>
-        </div>
-    </div>
-</div>
-
-
-<div class="container h-100 d-flex bg-primary">
-    <div class="center_spacing">
-            <ul class="nav_connections">
-                <li><a href="#contest_page"> This Week's / Days Contest</a></li>
-                <li><a href="#Winner_page"> This Week's / Days Winner</a></li>
-            </ul>
-    </div>
-</div>
-
--->
-
-
-<!--
-
-<div class="container h-100 d-flex bg-primary">
-    <div class="jumbotron my-auto">
-        <h1 class="display-3">Hello, world!</h1>
-        <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-    </div>
-</div>
--->
-
 <div class="transperent_divider bg-white">
     <div class="container">
         <div class="row ">
             <div class="center_spacing" >
-                <h1 style="color: black;"> The Daily / Weekly Contests</h1>
+                <h1 style="color: black; font-size: 96px;"> The Daily Contests</h1>
             </div>
         </div>
 
@@ -204,7 +143,7 @@
 
         <div class="row">
             <div class="center_spacing">
-                <p class="font-weight-bold" style="color: black;"> On a revolving daily or weekly bases the website will post a random picture off of the web. <br>
+                <p class="font-weight-bold" style="color: black; font-size:36px"> On a revolving daily or weekly bases the website will post a random picture off of the web. <br>
                     The job of the user is to provide a caption for that image. <br>
                     The user that submits the most up voted caption for the day or week will be the winner!<br>
                 </p>
@@ -214,30 +153,69 @@
 </div>
 
 
-<div class="transperent_divider h-5">
+<div class="transperent_divider_reduced h-5">
 
 </div>
 
+
+<div class="transperent_divider bg-white text-black" id="Winner_page">
+    <div class="contain">
+        <div class="center_spacing row">
+            <h1>Days Winner</h1>
+        </div>
+        <div class="row">
+            <div class="divider"></div>
+        </div>
+        <div class="center_spacing row">
+            <p>Caption from the winner</p>
+        </div>
+    </div>
+
+</div>
+
+
+
+<div class="transperent_divider_reduced h-5">
+
+</div>
 
 
 <div class="center_align bg-white text-black" id="contest_page">
     <div>
         <div class="divider"></div>
         <div class="center_spacing">
-            <h1 class="intro_info"> This Week's / Days Contest </h1><br>
+            <h1 class="intro_info"> Today's Contest </h1><br>
         </div>
         <div class="center_spacing">
             <span class="intro_info"> if you can caption the image bellow you can rule them all</span>
         </div>
 
         <div class="divider"></div>
+
         <div class="center_spacing">
             <div class="canvas_container">
                 <img th:src="@{${pictureURL}}" th:height="500" th:width="500">
 
             </div>
         </div>
+
+
         <div class="divider"></div>
+
+
+        <form>
+            <div class="center_spacing">
+                <div class="container_center_body">
+                    <label>
+                        <span class="caption_section_label">
+                            Your Caption
+                        </span>
+                         <input class="input_design" maxlength="250" id="caption2_content" type="text">
+                    </label>
+                    <span class="caption_character_length">250</span>
+
+                </div>
+
         <div class="center_spacing">
             <div class="container_center_body">
                 <form action="/addCaptionToPicture" th:method="POST">
@@ -249,43 +227,16 @@
                 </form>
                 <span class="caption_character_length">250</span>
 
-            </div>
 
-        </div>
+            </div>
+        </form>
+
         <div class="divider"></div>
         <div class="center_spacing">
             <button class="btn btn-outline-primary btn-lg" data-bs-toggle="modal" data-bs-target="#staticBackdrop-login">Login</button>
-<!--            <button th:href="/setPicture" th:method="GET"></button>-->
         </div>
     </div>
 </div>
-
-<div class="white_divider">
-    <p >BootStrap-White</p>
-</div>
-
-
-<div class="center_align" id="Winner_page">
-    <div class="center_spacing">
-        <h1>This Week's / Days Winner</h1>
-    </div>
-</div>
-
-<!--
-<div class="background">
-    <div class="container_parent">
-        <div class="main_body_for_contest">
-            <div>
-                <canvas class="canvas_container"><a>Something</a></canvas>
-
-            </div>
-            <input style="background-color: white; border:none; width:70vh; height:40vh;" id="caption_content" type="text">
-        </div>
-
-    </div>
-
-</div>
--->
 
 
 <footer class="text-black ">
@@ -297,8 +248,6 @@
         </div>
     </div>
 </footer>
-
-
 
 
 

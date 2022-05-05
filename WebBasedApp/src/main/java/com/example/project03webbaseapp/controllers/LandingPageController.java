@@ -72,6 +72,12 @@ public class LandingPageController {
     @RequestMapping(value = "/settings", method = RequestMethod.GET)
     public String getSettings(){return "settings";}
 
+    @RequestMapping(value= "/logged_in", method = RequestMethod.GET)
+    public String getLoggedIn(){return "logged_in";}
+
+    @RequestMapping(value= "/profile", method = RequestMethod.GET)
+    public String getProfile(){return "profile";}
+
 
 //    @RequestMapping(value = "/Landing", method = RequestMethod.GET)
 //    public String setPicture(Model model) throws Exception {
