@@ -2,11 +2,13 @@ package com.example.project03webbaseapp.database;
 
 
 import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
 import java.util.List;
 import java.util.Objects;
 import javax.persistence.*;
 
+@EnableScheduling
 @Entity
 public class User {
 
