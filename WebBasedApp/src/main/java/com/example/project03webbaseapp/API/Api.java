@@ -4,24 +4,10 @@ import com.example.project03webbaseapp.database.*;
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.stereotype.*;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.ui.*;
 
-
-import org.json.JSONArray;
-import org.json.JSONObject;
 
 // java url packages
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import org.json.JSONObject;
 
-
-import javax.servlet.http.HttpSession;
-import java.util.*;
 
 @Controller
 @RequestMapping("/apiEndpoints")
@@ -41,6 +27,8 @@ public class Api {
 
     @Autowired
     NetworkDAO networkDAO;
+
+
 
 //  User API endpoints
 
@@ -71,6 +59,7 @@ public class Api {
         User user = new User(username, fName, lName, password, profilePicUrl);
 
         if(!usernameIsTaken(username)){
+            System.out.println("User Created");
             userRepo.save(user);
             return "redirect:/landing_page";
         }
@@ -89,6 +78,13 @@ public class Api {
         return captionRepo.findCaptionByUserId(id);
     }
 
+
+/**
+    @GetMapping( "/allUsers")
+    public Collection<User> getAllUsers() {
+        return userRepo.findAllUsers();
+    }
+*/
 
 
 

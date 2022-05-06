@@ -3,6 +3,7 @@ package com.example.project03webbaseapp.database;
 
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 
+import java.util.List;
 import java.util.Objects;
 import javax.persistence.*;
 
@@ -34,6 +35,8 @@ public class User {
 
     }
 
+
+
     public Integer getUserId() {
         return userId;
     }
@@ -42,7 +45,7 @@ public class User {
         this.userId = userId;
     }
 
-    public String getUsername() {
+    public  String getUsername() {
         return username;
     }
 
@@ -106,4 +109,5 @@ public class User {
                 ", profilePicture='" + profilePicture + '\'' +
                 '}';
     }
+
 }

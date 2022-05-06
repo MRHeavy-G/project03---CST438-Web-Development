@@ -20,7 +20,7 @@ import java.util.List;
 
 public class SessionController {
 
-
+/**
     @PostMapping("/login")
     public String loginA(@ModelAttribute("user") User user, HttpServletRequest sessionLink){
 
@@ -39,4 +39,5 @@ public class SessionController {
             return "Password is incorrect";
         }
     }
+    */
 }

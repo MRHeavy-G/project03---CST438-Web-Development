@@ -61,7 +61,7 @@
 
             <!-- DropDown -->
             <div class="dropdown">
-                <button id="profile_options" class="btn btn-light dropdown-toggle" type="button" data-toggle="dropdown">$username</button>
+                <button id="profile_options" class="btn btn-light dropdown-toggle" type="button" data-toggle="dropdown" ><span th:text="@{/getActiveUser}"></span></button>
 
                 <ul class="dropdown-menu" aria-labelledby="profile_options">
                     <li><a th:href="@{/profile}" class="dropdown-item">My profile</a></li>
