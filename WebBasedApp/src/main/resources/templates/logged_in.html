@@ -61,12 +61,12 @@
 
             <!-- DropDown -->
             <div class="dropdown">
-                <button id="profile_options" class="btn btn-light dropdown-toggle" type="button" data-toggle="dropdown">$username</button>
+                <button id="profile_options" class="btn btn-light dropdown-toggle" type="button" data-toggle="dropdown" ><span class="" th:text="Sub-Username"></span></button>
 
                 <ul class="dropdown-menu" aria-labelledby="profile_options">
                     <li><a th:href="@{/profile}" class="dropdown-item">My profile</a></li>
                     <li><a th:href="@{/settings}" class="dropdown-item">Settings</a></li>
-                    <li><a th:href="@{/landing_page}" class="dropdown-item">Logout</a></li>
+                    <li><a th:href="@{/logOut}" class="dropdown-item">Logout</a></li>
                 </ul>
             </div>
 
