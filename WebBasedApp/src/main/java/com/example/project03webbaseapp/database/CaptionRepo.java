@@ -8,9 +8,11 @@ public interface CaptionRepo extends CrudRepository<Caption, Integer>{
 
     Caption findCaptionByCaptionId(Integer captionId);
 
-    Caption findCaptionByUserId(Integer userId);
+    Caption findCaptionByUsername(String username);
 
-    List<Caption> findAllByPictureId(Integer pictureId);
+    //List<Caption> findAllByPictureId(Integer pictureId);
 
+
+    List<Caption> findCaptionByPictureId(Integer picId);
 
 }
