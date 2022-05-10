@@ -12,6 +12,7 @@ public interface PictureRepo extends CrudRepository<Picture, Integer> {
 
     Picture findPictureByPictureName(String name);
 
+
     List<Picture> findAll();
 
 }

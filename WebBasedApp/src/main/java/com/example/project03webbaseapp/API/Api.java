@@ -82,49 +82,5 @@ public class Api {
     }
 
 
-/**
-    @GetMapping( "/allUsers")
-    public Collection<User> getAllUsers() {
-        return userRepo.findAllUsers();
-    }
-*/
-
-
-
-//    Picture API endpoints
-
-//    @RequestMapping(value = "/setPicture", method = RequestMethod.POST)
-//    public Picture setPicture() throws Exception {
-//        List<Picture> pictureList = new ArrayList<Picture>();
-//
-//        String endpoint = networkDAO.request("https://api.unsplash.com/search/photos?query=funny&client_id=" + ACCESS_KEY);
-//
-//        JSONObject root = new JSONObject(endpoint);
-//
-//        JSONArray pictures = root.getJSONArray("results");
-//
-//        for(int i = 0; i < pictures.length(); i++){
-//            // Json Data
-//            JSONObject jsonPic = pictures.getJSONObject(i);
-//
-//            //new picture object
-//            Picture picture = new Picture();
-//
-//            String name = jsonPic.getString("description");
-//
-//            // TODO not sure if this will work:(
-//            JSONObject jsonURL = jsonPic.getJSONObject("urls");
-//
-//            String url = jsonURL.getString("regular");
-//
-//            picture.setPictureName(name);
-//            picture.setPictureUrl(url);
-//
-//            pictureList.add(picture);
-//        }
-//
-//
-//        return pictureList.get(0);
-//    }
 
 }
