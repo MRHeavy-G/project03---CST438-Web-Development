@@ -19,7 +19,7 @@
 <div class="modal fade" id="staticBackdrop-login" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form class="login-form" name="form-login-signin" th:action="@{/login_check}" th:method="post">
+            <form class="login-form" name="form-login-signin"  th:method="POST" th:action="@{/login_check}">
                 <div class="modal-header">
 
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -60,7 +60,7 @@
 <div class="modal fade" id="staticBackdrop-createAccount" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form class="create-account-form" name="form-create-account" th:action="@{/signup}" method="post">
+            <form class="create-account-form" name="form-create-account" th:action="@{/signup}" method="POST">
                 <div class="modal-header">
 
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -70,7 +70,7 @@
                     <!-- User Name Input Field -->
                     <div class="input-group input-group-sm mb-3">
                         <span class="input-group-text" id="inputGroup-sizing-sm-username-ca">User Name:</span>
-                        <input type="text" name="username" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                        <input id="un" type="text" name="username" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
                     </div>
                 </div>
 
@@ -83,7 +83,7 @@
                 </div>
 
                 <div class="modal-header">
-                    <!-- First Name Input Field -->
+                    <!-- Laset Name Input Field -->
                     <div class="input-group input-group-sm mb-3">
                         <span class="input-group-text" id="inputGroup-sizing-sm-lastname">Last Name:</span>
                         <input type="text" name="lName" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
@@ -108,7 +108,7 @@
                 </div>
 
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-success" data-bs-dismiss="modal">Create Account</button>
+                    <button type="Submit" class="btn btn-success" data-bs-dismiss="modal" value="Create Account">Create Account</button>
 
                 </div>
             </form>
@@ -236,6 +236,7 @@
 
                 </div>
 
+                <!--
         <div class="center_spacing">
             <div class="container_center_body">
                 <form action="/addCaptionToPicture" th:method="POST">
@@ -246,7 +247,7 @@
                     <input type="submit" text="Submit" class="btn btn-primary btn-block">
                 </form>
                 <span class="caption_character_length">250</span>
-
+    -->
 
             </div>
         </form>

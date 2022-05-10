@@ -142,7 +142,7 @@ button:hover{
 .center_align {
     margin: auto;
     width: 70%;
-    height: 150vh;
+    height: 180vh;
     align-items: center;
     justify-content: center;
     display: flex;

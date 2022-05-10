@@ -70,7 +70,7 @@ public class LandingPageController {
 
         captionRepo.save(cap);
 
-        return "redirect:/landing_page";
+        return "redirect:/logged_in";
     }
 
 
@@ -94,11 +94,9 @@ public class LandingPageController {
 
     // calling the login sessions
 
-    @RequestMapping("/login")
-    public String login(Model model){
-        return "logged_in.html";
-    }
 
+
+    /**
     // Calling in the loggin features in order to get the post method
     @PostMapping("/login_check")
     public String checkLogin(@RequestParam String username,@RequestParam String password, HttpServletRequest sessionLink){
@@ -122,48 +120,14 @@ public class LandingPageController {
 
     }
 
+     @RequestMapping("/login")
+     public String login(Model model){
+     return "logged_in.html";
+     }
+    */
 
 
-    // String processing for testing
-    @PostMapping("/string_testing")
-    public String addUser(@RequestParam String username, @RequestParam String password){
-        System.out.println(username + " : " + password);
-        return "redirect:/login";
-    }
 
-    @PostMapping("/signup")
-    public String addUser(@RequestParam String username,
-                          @RequestParam String fName,
-                          @RequestParam String lName,
-                          @RequestParam String password,
-                          @RequestParam String profilePicUrl){
-        User user = new User(username, fName, lName, password, profilePicUrl);
-
-        if(!usernameIsTaken(username)){
-
-            userRepo.save(user);
-            return "redirect:/landing_page";
-        }
-        return "redirect:/landing_page";
-    }
-
-    @RequestMapping("/usernameIsTaken")
-    public @ResponseBody Boolean usernameIsTaken(@RequestParam(defaultValue = "user") String username){
-        return userRepo.existsUserByUsername(username);
-    }
-    //Structure for Session Calls
-    @RequestMapping("/getActiveUser")
-    public User getActiveUser(HttpSession session){
-        User user = UserRepo.findUserByUsername(((List<String>)session.getAttribute("sessionList")).get(0));
-
-        return user;
-    }
-
-    @GetMapping(path="/getAllUsers")
-    public @ResponseBody
-    Iterable<User> getAllUsers() {
-        return userRepo.findAll();
-    }
 
 
     /**

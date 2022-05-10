@@ -4,7 +4,8 @@ import com.example.project03webbaseapp.database.*;
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.stereotype.*;
 import org.springframework.web.bind.annotation.*;
-
+import javax.servlet.http.HttpSession;
+import java.util.List;
 
 // java url packages
 
@@ -34,11 +35,12 @@ public class Api {
 
 
 
-
+/**
     @RequestMapping("/getUserByUsername")
     public @ResponseBody User getUserByUsername(@RequestParam(defaultValue = "user") String name){
         return UserRepo.findUserByUsername(name);
     }
+    */
 
     @RequestMapping("/getUserByUserId")
     public @ResponseBody User getUserByUserId(@RequestParam(defaultValue = "0") Integer userId){
@@ -50,7 +52,7 @@ public class Api {
         return userRepo.existsUserByUsername(username);
     }
 
-    @PostMapping("/signup")
+    /** @PostMapping("/signup")
     public String addUser(@RequestParam String username,
                           @RequestParam String fName,
                           @RequestParam String lName,
@@ -65,6 +67,7 @@ public class Api {
         }
         return "redirect:/landing_page";
     }
+                          */
 
 //    Caption API endpoints
 

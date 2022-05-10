@@ -15,12 +15,13 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer userId;
-
+    private Integer isAdmin;
     private String username;
     private String firstname;
     private String lastname;
     private String password;
     private String profilePicture;
+
 
     // do we want a history of captions they have made?
 
@@ -30,6 +31,7 @@ public class User {
         this.lastname = lastname;
         this.password = password;
         this.profilePicture = profilePicture;
+        this.isAdmin = 0;
 
     }
 
