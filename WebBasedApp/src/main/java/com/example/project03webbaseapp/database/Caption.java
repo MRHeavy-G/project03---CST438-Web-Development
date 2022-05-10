@@ -21,7 +21,7 @@ public class Caption {
 
     private Integer pictureId;
 
-    private String content; // to store what the caption is
+    public String content; // to store what the caption is
 
     private String dateTime;
 

@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.text.SimpleDateFormat;
 import java.time.format.DateTimeFormatter;
@@ -36,15 +37,25 @@ public class LandingPageController {
 
     NetworkDAO networkDAO = new NetworkDAO();
 
+//    Picture dailyPicture = pictureRepo.findPictureByPictureId(3);
+//
+//    List<Caption> capList = captionRepo.findCaptionByPictureId(dailyPicture.getPictureId());
+
 
     @RequestMapping("/")
     String home(Model model){
         List<Picture> pictureList = pictureRepo.findAll();
 
-        model.addAttribute("pictureURL",pictureList.get(12).getPictureUrl());
+        Picture dailyPic = pictureList.get(12);
 
+        List<Caption> capList = captionRepo.findCaptionByPictureId(dailyPic.getPictureId());
+
+        model.addAttribute("pictureURL",dailyPic.getPictureUrl());
+
+        model.addAttribute("capList", capList);
 
         return "landing_page";}
+
 
     @PostMapping("/addCaptionToPicture")
     public String addCaptionToPicture(@RequestParam String username,
@@ -80,15 +91,7 @@ public class LandingPageController {
     @RequestMapping(value= "/profile", method = RequestMethod.GET)
     public String getProfile(){return "profile";}
 
-    @RequestMapping(value="/viewCaptions", method = RequestMethod.GET)
-    public String viewCaptions(@RequestParam Integer pictureId, Model model){
 
-        Picture pic = pictureRepo.findPictureByPictureId(pictureId);
-
-        model.addAttribute("picture", pic);
-
-        return "CaptionList";
-    }
 
 
 

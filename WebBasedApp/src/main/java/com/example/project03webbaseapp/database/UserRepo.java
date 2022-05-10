@@ -9,13 +9,16 @@ import java.util.List;
 public interface UserRepo extends CrudRepository<User, Integer>{
 
 
-    public static User findUserByUsername(String username) {
+    static User findUserByUsername(String username){
         return null;
-    }
+    };
 
     User findUserByUserId(Integer userId);
 
     Boolean existsUserByUsername(String username);
+
+
+
 
 
 }
