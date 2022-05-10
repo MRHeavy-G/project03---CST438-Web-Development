@@ -19,7 +19,7 @@
 <div class="modal fade" id="staticBackdrop-login" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form class="login-form" method="post" name="form-login-signin" action="/login" >
+            <form class="login-form" name="form-login-signin"  th:method="POST" th:action="@{/login_check}">
                 <div class="modal-header">
 
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -28,23 +28,23 @@
                 <div class="modal-header">
                     <!-- Login Input Field -->
                     <div class="input-group input-group-sm mb-3">
-                        <span class="input-group-text" id="inputGroup-sizing-sm-username" name="username">Username: </span>
-                        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" >
+                        <span class="input-group-text" id="inputGroup-sizing-sm-username">Username: </span>
+                        <input type="text" name="username" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" >
                     </div>
                 </div>
 
                 <div class="modal-header">
                     <!-- Password Input Field -->
                     <div class="input-group input-group-sm mb-3">
-                        <span class="input-group-text" id="inputGroup-sizing-sm-password" name="password" >Password: </span>
-                        <input type="password" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                        <span class="input-group-text" id="inputGroup-sizing-sm-password"  >Password: </span>
+                        <input type="password"  name="password" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
                     </div>
 
                 </div>
 
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#staticBackdrop-createAccount">Create Account</button>
-                    <a class="btn btn-primary">Sign In</a>
+                    <input id="submit" type="submit" value="Log In" class="btn btn-primary">
                     <!--  th:href="@{/logged_in}" -->
                 </div>
             </form>
@@ -60,39 +60,59 @@
 <div class="modal fade" id="staticBackdrop-createAccount" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header">
+            <form class="create-account-form" name="form-create-account" th:action="@{/signup}" method="POST">
+                <div class="modal-header">
 
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-
-            <div class="modal-header">
-                <!-- First Name Input Field -->
-                <div class="input-group input-group-sm mb-3">
-                    <span class="input-group-text" id="inputGroup-sizing-sm-firstname">First Name:</span>
-                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-            </div>
 
-            <div class="modal-header">
-                <!-- Email Input Field -->
-                <div class="input-group input-group-sm mb-3">
-                    <span class="input-group-text" id="inputGroup-sizing-sm-email">Email:</span>
-                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                <div class="modal-header">
+                    <!-- User Name Input Field -->
+                    <div class="input-group input-group-sm mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-sm-username-ca">User Name:</span>
+                        <input id="un" type="text" name="username" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                    </div>
                 </div>
-            </div>
 
-            <div class="modal-header">
-                <!-- Password for creating Input Field -->
-                <div class="input-group input-group-sm mb-3">
-                    <span class="input-group-text" id="inputGroup-sizing-sm-password-for-createAccount">Password:</span>
-                    <input type="password" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                <div class="modal-header">
+                    <!-- First Name Input Field -->
+                    <div class="input-group input-group-sm mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-sm-firstname">First Name:</span>
+                        <input type="text" name="fName" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                    </div>
                 </div>
-            </div>
 
-            <div class="modal-footer">
-                <button type="button" class="btn btn-success" data-bs-dismiss="modal">Create Account</button>
+                <div class="modal-header">
+                    <!-- Laset Name Input Field -->
+                    <div class="input-group input-group-sm mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-sm-lastname">Last Name:</span>
+                        <input type="text" name="lName" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                    </div>
+                </div>
 
-            </div>
+
+                <div class="modal-header">
+                    <!-- Password for creating Input Field -->
+                    <div class="input-group input-group-sm mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-sm-password-for-createAccount">Password:</span>
+                        <input type="password" name="password" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                    </div>
+                </div>
+
+                <div class="modal-header">
+                    <!-- ProfilePicURL for creating Input Field -->
+                    <div class="input-group input-group-sm mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-sm-profilePicUrl">Profile Picture URL:</span>
+                        <input type="text" name="profilePicUrl" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="Submit" class="btn btn-success" data-bs-dismiss="modal" value="Create Account">Create Account</button>
+
+                </div>
+            </form>
+
         </div>
     </div>
 </div>
@@ -216,6 +236,7 @@
 
                 </div>
 
+                <!--
         <div class="center_spacing">
             <div class="container_center_body">
                 <form action="/addCaptionToPicture" th:method="POST">
@@ -226,7 +247,7 @@
                     <input type="submit" text="Submit" class="btn btn-primary btn-block">
                 </form>
                 <span class="caption_character_length">250</span>
-
+    -->
 
 
             </div>
@@ -237,6 +258,11 @@
             <button class="btn btn-outline-primary btn-lg" data-bs-toggle="modal" data-bs-target="#staticBackdrop-login">Login</button>
         </div>
     </div>
+</div>
+
+
+<div class="transperent_divider_reduced h-5">
+
 </div>
 
 

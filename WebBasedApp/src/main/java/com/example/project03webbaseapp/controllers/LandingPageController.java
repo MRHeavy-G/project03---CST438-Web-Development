@@ -10,12 +10,17 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import java.text.SimpleDateFormat;
 import java.time.format.DateTimeFormatter;
 import java.time.LocalDateTime;
 
 
 import java.sql.Time;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -28,6 +33,11 @@ public class LandingPageController {
     private PictureRepo pictureRepo;
 
     @Autowired
+
+    private UserRepo userRepo;
+
+    @Autowired
+
     private CaptionRepo captionRepo;
 
     final apiKey apiKey = new apiKey();
@@ -43,8 +53,8 @@ public class LandingPageController {
 
         model.addAttribute("pictureURL",pictureList.get(12).getPictureUrl());
 
-
-        return "landing_page";}
+        return "landing_page";
+    }
 
     @PostMapping("/addCaptionToPicture")
     public String addCaptionToPicture(@RequestParam String username,
@@ -60,7 +70,7 @@ public class LandingPageController {
 
         captionRepo.save(cap);
 
-        return "redirect:/landing_page";
+        return "redirect:/logged_in";
     }
 
     //model.addAttribute("picUrl", pictureList.get(0).getPictureUrl());
@@ -89,6 +99,8 @@ public class LandingPageController {
 
         return "CaptionList";
     }
+
+
 
 
 

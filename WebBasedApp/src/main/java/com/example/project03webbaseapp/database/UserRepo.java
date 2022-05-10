@@ -1,21 +1,19 @@
 package com.example.project03webbaseapp.database;
 
-import org.springframework.data.repository.CrudRepository;
-import org.springframework.data.repository.query.Param;
 import org.springframework.data.jpa.repository.Query;
-
-import java.util.List;
+import org.springframework.data.repository.CrudRepository;
 
 public interface UserRepo extends CrudRepository<User, Integer>{
 
 
-    public static User findUserByUsername(String username) {
-        return null;
-    }
+    //User testUSer = new User("user1","user1","user1","user1","user1");
+
+
+    User findUserByUsername(String username);
 
     User findUserByUserId(Integer userId);
 
-    Boolean existsUserByUsername(String username);
+     Boolean existsUserByUsername(String username);
 
 
 }

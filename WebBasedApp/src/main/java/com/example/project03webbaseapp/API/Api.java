@@ -4,24 +4,11 @@ import com.example.project03webbaseapp.database.*;
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.stereotype.*;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.ui.*;
-
-
-import org.json.JSONArray;
-import org.json.JSONObject;
+import javax.servlet.http.HttpSession;
+import java.util.List;
 
 // java url packages
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import org.json.JSONObject;
 
-
-import javax.servlet.http.HttpSession;
-import java.util.*;
 
 @Controller
 @RequestMapping("/apiEndpoints")
@@ -42,15 +29,18 @@ public class Api {
     @Autowired
     NetworkDAO networkDAO;
 
+
+
 //  User API endpoints
 
 
 
-
+/**
     @RequestMapping("/getUserByUsername")
     public @ResponseBody User getUserByUsername(@RequestParam(defaultValue = "user") String name){
         return UserRepo.findUserByUsername(name);
     }
+    */
 
     @RequestMapping("/getUserByUserId")
     public @ResponseBody User getUserByUserId(@RequestParam(defaultValue = "0") Integer userId){
@@ -62,7 +52,7 @@ public class Api {
         return userRepo.existsUserByUsername(username);
     }
 
-    @PostMapping("/signup")
+    /** @PostMapping("/signup")
     public String addUser(@RequestParam String username,
                           @RequestParam String fName,
                           @RequestParam String lName,
@@ -71,11 +61,13 @@ public class Api {
         User user = new User(username, fName, lName, password, profilePicUrl);
 
         if(!usernameIsTaken(username)){
+            System.out.println("User Created");
             userRepo.save(user);
             return "redirect:/landing_page";
         }
         return "redirect:/landing_page";
     }
+                          */
 
 //    Caption API endpoints
 
@@ -88,6 +80,7 @@ public class Api {
     public @ResponseBody Caption getCaptionByUserId(@RequestParam(defaultValue = "0") Integer id){
         return captionRepo.findCaptionByUserId(id);
     }
+
 
 
 }
