@@ -27,10 +27,13 @@ public class Api {
     @Autowired
     private CaptionRepo captionRepo;
 
+    /**
     @GetMapping("/getUserByUsername/{id}")
     public User getUserByUsername(@PathVariable Integer id){
-        User user = userRepo.findUserByUserId(id);
+        User user = UserRepo.findUserByUserId(id);
+        return user;
     }
+    */
 
 
 }
