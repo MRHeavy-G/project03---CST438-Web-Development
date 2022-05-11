@@ -21,8 +21,8 @@ public class Api {
 
     @Autowired
     private UserRepo userRepo;
-    @Autowired
-    private CaptionRepo captionRepo;
+    //@Autowired
+    //private CaptionRepo captionRepo;
     @Autowired
     private PictureRepo pictureRepo;
 
@@ -71,6 +71,7 @@ public class Api {
 
 //    Caption API endpoints
 
+    /**
     @RequestMapping("/getCaptionById")
     public @ResponseBody Caption getCaptionById(@RequestParam(defaultValue = "0") Integer id){
         return captionRepo.findCaptionByCaptionId(id);
@@ -80,7 +81,7 @@ public class Api {
     public @ResponseBody Caption getCaptionByUserId(@RequestParam(defaultValue = "0") Integer id){
         return captionRepo.findCaptionByUserId(id);
     }
-
+*/
 
 
 }

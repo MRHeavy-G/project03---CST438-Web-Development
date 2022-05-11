@@ -10,7 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import com.example.project03webbaseapp.database.*;
 
-import com.example.project03webbaseapp.API.apiKey;
+//import com.example.project03webbaseapp.API.apiKey;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -32,11 +32,10 @@ public class Project03WebBaseAppApplication {
 
     @Autowired
     private UserRepo UserRepo;
-    @Autowired
-    private CaptionRepo captionRepo;
+    //@Autowired
+    //private CaptionRepo captionRepo;
     @Autowired
     private PictureRepo pictureRepo;
-
     @Autowired
     NetworkDAO networkDAO;
 
@@ -83,13 +82,11 @@ public class Project03WebBaseAppApplication {
 
     @RequestMapping("/homePage")
     public String landingPage(Model model, HttpSession session) {
-        //String uri = "https://localhost:8080/HomePage";
-        //RestTemplate restTemplate = new RestTemplate();
-        //User user = restTemplate.getForObject(uri, User.class);
+
         User user = null;
 
         if(isAuthenticated(session)){
-            user = UserRepo.findUserByUsername(((List<String>)session.getAttribute("sessionVar")).get(0));
+            user = UserRepo.findUserByUsername(((List<String>)session.getAttribute("sVar")).get(0));
             model.addAttribute("user", user);
             return "logged_in";
         }
