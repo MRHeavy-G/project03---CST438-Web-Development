@@ -4,6 +4,7 @@ package com.example.project03webbaseapp.database;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
+import java.util.List;
 import java.util.Objects;
 import javax.persistence.*;
 
@@ -14,12 +15,13 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer userId;
-
+    private Integer isAdmin;
     private String username;
     private String firstname;
     private String lastname;
     private String password;
     private String profilePicture;
+
 
     // do we want a history of captions they have made?
 
@@ -29,12 +31,15 @@ public class User {
         this.lastname = lastname;
         this.password = password;
         this.profilePicture = profilePicture;
+        this.isAdmin = 0;
 
     }
 
     public User() {
 
     }
+
+
 
     public Integer getUserId() {
         return userId;
@@ -44,7 +49,7 @@ public class User {
         this.userId = userId;
     }
 
-    public String getUsername() {
+    public  String getUsername() {
         return username;
     }
 
@@ -108,4 +113,5 @@ public class User {
                 ", profilePicture='" + profilePicture + '\'' +
                 '}';
     }
+
 }

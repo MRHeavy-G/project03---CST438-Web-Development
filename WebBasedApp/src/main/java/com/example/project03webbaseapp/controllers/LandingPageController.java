@@ -11,12 +11,17 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import java.text.SimpleDateFormat;
 import java.time.format.DateTimeFormatter;
 import java.time.LocalDateTime;
 
 
 import java.sql.Time;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -29,6 +34,11 @@ public class LandingPageController {
     private PictureRepo pictureRepo;
 
     @Autowired
+
+    private UserRepo userRepo;
+
+    @Autowired
+
     private CaptionRepo captionRepo;
 
     final apiKey apiKey = new apiKey();
@@ -50,11 +60,13 @@ public class LandingPageController {
 
         List<Caption> capList = captionRepo.findCaptionByPictureId(dailyPic.getPictureId());
 
+
         model.addAttribute("pictureURL",dailyPic.getPictureUrl());
 
         model.addAttribute("capList", capList);
 
         return "landing_page";}
+
 
 
     @PostMapping("/addCaptionToPicture")
@@ -71,7 +83,7 @@ public class LandingPageController {
 
         captionRepo.save(cap);
 
-        return "redirect:/landing_page";
+        return "redirect:/logged_in";
     }
 
     //model.addAttribute("picUrl", pictureList.get(0).getPictureUrl());
@@ -90,6 +102,8 @@ public class LandingPageController {
 
     @RequestMapping(value= "/profile", method = RequestMethod.GET)
     public String getProfile(){return "profile";}
+
+
 
 
 

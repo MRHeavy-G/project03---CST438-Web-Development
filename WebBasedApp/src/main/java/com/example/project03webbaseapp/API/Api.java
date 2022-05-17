@@ -4,20 +4,11 @@ import com.example.project03webbaseapp.database.*;
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.stereotype.*;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.ui.*;
-
-
-import org.json.JSONArray;
-import org.json.JSONObject;
+import javax.servlet.http.HttpSession;
+import java.util.List;
 
 // java url packages
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import org.json.JSONObject;
+
 
 
 import javax.persistence.criteria.CriteriaBuilder;
@@ -55,8 +46,6 @@ public class Api {
     @GetMapping("/findPictureCaptions/{pictureID}")
     public List<Caption> getAllCaptionsForPicture(@PathVariable Integer pictureId){
         return captionRepo.findCaptionByPictureId(pictureId);
-    }
-
 
 
 
