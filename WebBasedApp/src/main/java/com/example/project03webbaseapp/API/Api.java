@@ -11,6 +11,7 @@ import java.util.List;
 
 
 
+import javax.persistence.criteria.CriteriaBuilder;
 import javax.servlet.http.HttpSession;
 import java.util.*;
 
@@ -28,9 +29,24 @@ public class Api {
     private CaptionRepo captionRepo;
 
     @GetMapping("/getUserByUsername/{id}")
-    public User getUserByUsername(@PathVariable Integer id){
-        User user = userRepo.findUserByUserId(id);
+    public User getUserByUserId(@PathVariable Integer id){
+        return  userRepo.findUserByUserId(id);
     }
+
+    @GetMapping("/getPictureByPictureId/{id}")
+    public Picture getPictureByPictureId(@PathVariable Integer id){
+        return pictureRepo.findPictureByPictureId(id);
+    }
+
+    @GetMapping("/getAllCaptionsByUser/<username>")
+    public List<Caption> getAllCaptionsByUser(@PathVariable String username){
+        return captionRepo.findAllByUsername(username);
+    }
+
+    @GetMapping("/findPictureCaptions/{pictureID}")
+    public List<Caption> getAllCaptionsForPicture(@PathVariable Integer pictureId){
+        return captionRepo.findCaptionByPictureId(pictureId);
+
 
 
 }
