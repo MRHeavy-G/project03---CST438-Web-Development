@@ -408,9 +408,9 @@ label #cancel{
     margin: auto;
 }
 
-.transparent_divider_reduced{
+.transparent_divider{
     width: 70%;
-    height: 70vh;
+    height: 90vh;
     justify-content: center;
     display: flex;
     margin: auto;
@@ -420,7 +420,7 @@ label #cancel{
     display: flex;
 }
 
-.transperent_divider_reduced{
+.transparent_divider_reduced{
     width: 70%;
     height: 30vh;
     justify-content: center;

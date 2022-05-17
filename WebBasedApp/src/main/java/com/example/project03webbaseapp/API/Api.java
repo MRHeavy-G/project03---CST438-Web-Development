@@ -28,10 +28,7 @@ public class Api {
     @Autowired
     private CaptionRepo captionRepo;
 
-    @GetMapping("/getUserByUsername/{id}")
-    public User getUserByUserId(@PathVariable Integer id){
-        return  userRepo.findUserByUserId(id);
-    }
+
 
     @GetMapping("/getPictureByPictureId/{id}")
     public Picture getPictureByPictureId(@PathVariable Integer id){
