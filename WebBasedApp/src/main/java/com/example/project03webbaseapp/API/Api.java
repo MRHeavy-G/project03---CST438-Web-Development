@@ -46,6 +46,7 @@ public class Api {
     @GetMapping("/findPictureCaptions/{pictureID}")
     public List<Caption> getAllCaptionsForPicture(@PathVariable Integer pictureId){
         return captionRepo.findCaptionByPictureId(pictureId);
+    }
 
 
 
