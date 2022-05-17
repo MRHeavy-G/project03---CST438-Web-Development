@@ -13,160 +13,100 @@
 </head>
 
 <div>
-    <nav id="home" class=" navbar navbar-expand-lg bg-primary navbar-dark p-2 " style="height: 7vh; ">
+    <nav id="home" class=" navbar navbar-expand-lg bg-primary navbar-dark text-white p-3 " style="height: 8vh;">
         <div class="container">
-            <a href="#" class="navbar-brand text-dark">CaptionIT</a>
+            <a href="#" class="navbar-brand text-white">CaptionIT</a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navlinkedlist">
                 <span class="navbar-toggle-icon"></span>
             </button>
 
-            <div id="navlinkedlist" class="collapse navbar-collapse ">
+            <div class="collapse navbar-collapse ">
                 <ul class="navbar-nav ms-auto ">
-                    <li class="nav-item ">
-                        <a href="#login" class="btn nav-link btn-light navbar-btn text-dark m-1" data-bs-toggle="modal" data-bs-target="#staticBackdrop-login">Login</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a href="#createA" class="btn btn-light nav-link text-dark m-1" data-bs-toggle="modal" data-bs-target="#staticBackdrop-createAccount">Create Account</a>
-                    </li>
-
                     <li class="nav-item">
                         <a href="#contest_page" class="btn btn-light nav-link text-dark m-1">Today's Contest</a>
                     </li>
                 </ul>
             </div>
+
+            <!-- Notification dropdown -->
+            <li class="btn  nav-item dropdown m-1">
+                <a
+                        class="nav-link dropdown-toggle hidden-arrow"
+                        href="#"
+                        id="navbarDropdownMenuLink"
+                        role="button"
+                        data-mdb-toggle="dropdown"
+                        aria-expanded="false"
+                >
+                    <i class="fas fa-bell"></i>
+                    <span class="badge rounded-pill badge-notification bg-danger">1</span>
+                </a>
+                <ul
+                        class="dropdown-menu dropdown-menu-end"
+                        aria-labelledby="navbarDropdownMenuLink"
+                >
+                    <li>
+                        <a class="dropdown-item" href="#">Some news</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="#">Another news</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </li>
+                </ul>
+            </li>
+
+            <!-- DropDown -->
+            <div class="dropdown">
+                <button id="profile_options" class="btn btn-light dropdown-toggle" type="button" data-toggle="dropdown" ><span class="" th:text="Sub-Username"></span></button>
+
+                <ul class="dropdown-menu" aria-labelledby="profile_options">
+                    <li><a th:href="@{/profile}" class="dropdown-item">My profile</a></li>
+                    <li><a th:href="@{/settings}" class="dropdown-item">Settings</a></li>
+                    <li><a th:href="@{/logOut}" class="dropdown-item">Logout</a></li>
+                </ul>
+            </div>
+
+
         </div>
     </nav>
-</div>
 
-<div class="transperent_divider bg-white">
-    <div class="container">
-        <div class="row ">
-            <div class="center_spacing" >
-                <h1 style="color: black; font-size: 96px;"> The Daily Contests</h1>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="divider"></div>
-        </div>
-
-
-        <div class="row">
-            <div class="center_spacing">
-                <p class="font-weight-bold" style="color: black; font-size:36px"> On a revolving daily or weekly bases the website will post a random picture off of the web. <br>
-                    The job of the user is to provide a caption for that image. <br>
-                    The user that submits the most up voted caption for the day or week will be the winner!<br>
-                </p>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<div class="transperent_divider_reduced h-5">
-
-</div>
-
-
-<div class="transperent_divider bg-white text-black" id="Winner_page">
-    <div class="contain">
-        <div class="center_spacing row">
-            <h1>Days Winner</h1>
-        </div>
-        <div class="row">
-            <div class="divider"></div>
-        </div>
-        <div class="center_spacing row">
-            <p>Caption from the winner</p>
-        </div>
-    </div>
 
 </div>
 
 
 
-<div class="transperent_divider_reduced h-5">
+<div class="transparent_divider_reduced h-5">
 
 </div>
-
 
 <div class="center_align bg-white text-black" id="contest_page">
-    <div>
-        <div class="divider"></div>
-        <div class="center_spacing">
-            <h1 class="intro_info"> Today's Contest </h1><br>
-        </div>
-        <div class="center_spacing">
-            <span class="intro_info"> if you can caption the image bellow you can rule them all</span>
-        </div>
-
-        <div class="divider"></div>
-
-        <div class="center_spacing">
-            <div class="canvas_container">
-               <!-- <img th:src="@{${pictureURL}}" th:height="500" th:width="500"> -->
-
-            </div>
-        </div>
-
-
-
-        <div class="divider"></div>
-
-
-        <form>
-
-            <!--
     <div class="center_spacing">
-        <div class="container_center_body">
-            <form action="/addCaptionToPicture" th:method="POST">
-                    <span class="caption_section_label">
-                        Your Caption
-                    </span>
-                <input class="input_design" maxlength="250" id="caption2_content2" type="text">
-                <input type="submit" text="Submit" class="btn btn-primary btn-block">
-            </form>
-            <span class="caption_character_length">250</span>
-
-
+        <div class="center_spacing row">
+            <p>Username: </p>
         </div>
-=======
--->
+        <div class="divider"></div>
+        <div class="center_spacing row">
+            <p>Email: </p>
+        </div>
+        <div class="divider"></div>
+        <div class="center_spacing row">
+            <p>Profile Image URL: </p>
+        </div>
+        <div class="divider"></div>
+        <div class="center_spacing row" >
+            <p>Caption Contest List: </p>
+        </div>
 
-
-
-    </form>
-
-    <div class="divider"></div>
-    <div class="center_spacing">
-        <button class="btn btn-outline-primary btn-lg" data-bs-toggle="modal" data-bs-target="#staticBackdrop-login">Login</button>
     </div>
 
-    <table>
-        <!--
-        <tr th:each="caption:${capList}">
-            <td class="captionUsername" th:text="${caption.getUsername() + ': '}"></td>
-            <td class="captionContent" th:text="${caption.getContent()}"></td>
-            <td class="captionLikes" th:text="${caption.getCaptionLikes()}"></td>
-            <button class="btn btn-primary">Like</button>
-
-        </tr>
-        -->
-    </table>
-
-
-
 </div>
-</div>
-
-
 <br>
 <br>
-=======
 
-<div class="transperent_divider_reduced h-5">
+<div class="transparent_divider_reduced h-5">
 
 </div>
 

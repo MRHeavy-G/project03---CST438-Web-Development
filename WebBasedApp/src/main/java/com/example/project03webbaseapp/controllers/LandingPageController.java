@@ -58,10 +58,15 @@ public class LandingPageController {
 
         Picture dailyPic = pictureList.get(12);
 
+        //This will be a random image we can change to
+        Picture contestPic = pictureList.get(11);
+
         List<Caption> capList = captionRepo.findCaptionByPictureId(dailyPic.getPictureId());
 
 
         model.addAttribute("pictureURL",dailyPic.getPictureUrl());
+
+        model.addAttribute("contestPic", contestPic.getPictureUrl());
 
         model.addAttribute("capList", capList);
 
